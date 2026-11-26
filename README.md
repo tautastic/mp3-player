@@ -27,6 +27,7 @@ Layout
     platformio.ini     build environments: device and simulator
     unflags.py         applies build_unflags to the framework's flags
     flake.nix          development shell
+    .envrc             loads the development shell through direnv
     src/core/          button type, serial protocol, debouncer
     src/ui/            LVGL menu and keypad input
     src/device/        firmware
@@ -36,7 +37,11 @@ Layout
 Building
 --------
 
-Enter the development shell first:
+direnv loads the development shell when you enter the folder. Allow it once:
+
+    direnv allow
+
+Without direnv, enter it with:
 
     nix develop
 
