@@ -40,17 +40,13 @@ Enter the development shell first:
 
     nix develop
 
-Firmware:
+Build and upload the firmware:
 
-    pio run -e device
     pio run -e device -t upload
-    pio device monitor -e device
 
-Simulator:
+Build and run the simulator:
 
-    pio run -e simulator
-    .pio/build/simulator/program
-    .pio/build/simulator/program /dev/ttyACM1
+    pio run -e simulator -t exec
 
-The simulator reads /dev/ttyACM0 unless another port is given. Without a
-port it runs with the keyboard only.
+The simulator reads /dev/ttyACM0. Add -a and a path to use another port.
+Without a port it runs with the keyboard only.
